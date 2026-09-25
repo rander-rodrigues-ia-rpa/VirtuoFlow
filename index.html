@@ -11,67 +11,64 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#eef2ff',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            950: '#090a0f',
-                        }
+                        darkBg: '#05070d',
+                        cardBg: '#0b0f19',
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
 
     <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 z-50">
+    <header class="fixed top-0 left-0 w-full bg-[#05070d]/75 backdrop-blur-2xl border-b border-slate-900/80 z-50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-xl font-extrabold tracking-tight text-white flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
-                    <span class="text-white text-sm font-black">V</span>
+            <div class="text-xl font-black tracking-wider text-white flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                    <span class="text-white text-base font-black">V</span>
                 </div>
                 VIRTUO<span class="text-indigo-400 font-light">FLOW</span>
             </div>
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#solucoes" class="hover:text-indigo-400 transition">Soluções</a>
-                <a href="#ecossistema" class="hover:text-indigo-400 transition">Ecossistema SaaS</a>
-                <a href="#metodo" class="hover:text-indigo-400 transition">Nosso Método</a>
+                <a href="#solucoes" class="hover:text-indigo-400 transition-colors">Soluções</a>
+                <a href="#ecossistema" class="hover:text-indigo-400 transition-colors">Ecossistema SaaS</a>
+                <a href="#metodo" class="hover:text-indigo-400 transition-colors">Nosso Método</a>
+                <a href="#contato" class="hover:text-indigo-400 transition-colors">Contato</a>
             </nav>
             <div>
-                <a href="#contato" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition shadow-lg shadow-indigo-600/25 border border-indigo-500/30">
-                    Fale com Especialista
+                <a href="https://wa.me/5531990920985?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20VirtuoFlow." target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-indigo-600/30 border border-indigo-400/30 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>WhatsApp Direto</span>
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-40 pb-28 md:pt-48 md:pb-36 px-6 overflow-hidden border-b border-slate-900/80">
-        <!-- Background Glow Effects -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-indigo-600/15 blur-[120px] rounded-full pointer-events-none"></div>
-        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+    <section class="relative pt-44 pb-32 md:pt-56 md:pb-40 px-6 overflow-hidden">
+        <!-- Background Lighting / Glow -->
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-indigo-600/20 to-cyan-500/20 blur-[140px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-8 shadow-inner">
-                <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
-                Consultoria Estratégica • IA • Engenharia de Software
+            <div class="inline-flex items-center gap-2.5 bg-slate-900/80 border border-slate-800 text-indigo-300 text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-widest mb-8 shadow-inner backdrop-blur-md">
+                <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+                Engenharia de Software • Consultoria em IA • Automação Avançada
             </div>
             
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-8 text-white leading-[1.1]">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 text-white leading-[1.08]">
                 Tecnologia e processos em <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-300 to-cyan-400">perfeito fluxo.</span>
             </h1>
             
-            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-                Transformamos operações complexas em estruturas eficientes, escaláveis e guiadas por dados. Rigor técnico e automação inteligente para o seu negócio.
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+                Transformamos operações complexas em estruturas eficientes, escaláveis e guiadas por dados. Rigor técnico e inteligência aplicada para o seu negócio.
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contato" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-4 rounded-xl transition shadow-xl shadow-indigo-600/30 text-base">
-                    Solicitar Diagnóstico
+                <a href="https://wa.me/5531990920985?text=Olá,%20gostaria%20de%20solicitar%20um%20diagnóstico%20estratégico%20para%20minha%20empresa." target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-4 rounded-xl transition-all shadow-xl shadow-indigo-600/30 text-base border border-indigo-400/30 flex items-center justify-center gap-2.5">
+                    <span>Solicitar Diagnóstico via WhatsApp</span>
                 </a>
-                <a href="#solucoes" class="bg-slate-900 hover:bg-slate-800/80 border border-slate-800 text-slate-300 font-semibold px-8 py-4 rounded-xl transition text-base">
+                <a href="#solucoes" class="bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 font-semibold px-8 py-4 rounded-xl transition-all text-base backdrop-blur-md">
                     Explorar Atuação
                 </a>
             </div>
@@ -79,7 +76,7 @@
     </section>
 
     <!-- As Frentes de Atuação (Soluções) -->
-    <section id="solucoes" class="py-28 px-6 relative">
+    <section id="solucoes" class="py-28 px-6 relative border-t border-slate-900/60 bg-[#070a14]">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-20">
                 <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Portfólio de Atuação</h2>
@@ -89,14 +86,15 @@
             
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- VirtuoFlow AI (Consultoria) -->
-                <div class="bg-gradient-to-b from-slate-900/90 to-slate-950 border border-slate-800/80 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-indigo-500/50 transition group shadow-2xl">
+                <div class="bg-gradient-to-b from-slate-900/70 to-cardBg border border-slate-800/80 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-indigo-500/50 transition-all group shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 blur-[50px] pointer-events-none"></div>
                     <div>
                         <div class="flex items-center justify-between mb-8">
                             <span class="text-xs bg-indigo-500/10 text-indigo-400 font-mono px-3.5 py-1.5 rounded-lg border border-indigo-500/20 font-semibold">FRENTE 01</span>
                             <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Consultoria & IA</span>
                         </div>
-                        <h4 class="text-2xl font-bold mb-4 text-white group-hover:text-indigo-300 transition">VirtuoFlow AI</h4>
-                        <p class="text-slate-400 mb-8 leading-relaxed">
+                        <h4 class="text-2xl font-bold mb-4 text-white group-hover:text-indigo-300 transition-colors">VirtuoFlow AI</h4>
+                        <p class="text-slate-400 mb-8 leading-relaxed font-light">
                             Diagnósticos profundos da operação para identificar gargalos, desperdícios e oportunidades reais de ganho com tecnologia e inteligência artificial aplicada.
                         </p>
                         <ul class="space-y-3.5 text-sm text-slate-300 mb-8">
@@ -106,19 +104,20 @@
                         </ul>
                     </div>
                     <div class="border-t border-slate-800/80 pt-6 text-xs text-slate-400">
-                        <strong class="text-slate-200">Ideal para:</strong> Gestores que buscam clareza estratégica antes de investir em tecnologia.
+                        <strong class="text-slate-200">Ideal para:</strong> Gestores que buscam clareza estratégica antes de investir.
                     </div>
                 </div>
 
                 <!-- VirtuoFlow Works (Fábrica de Software) -->
-                <div class="bg-gradient-to-b from-slate-900/90 to-slate-950 border border-slate-800/80 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-cyan-500/50 transition group shadow-2xl">
+                <div class="bg-gradient-to-b from-slate-900/70 to-cardBg border border-slate-800/80 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-cyan-500/50 transition-all group shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 blur-[50px] pointer-events-none"></div>
                     <div>
                         <div class="flex items-center justify-between mb-8">
                             <span class="text-xs bg-cyan-500/10 text-cyan-400 font-mono px-3.5 py-1.5 rounded-lg border border-cyan-500/20 font-semibold">FRENTE 02</span>
                             <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Fábrica de Software</span>
                         </div>
-                        <h4 class="text-2xl font-bold mb-4 text-white group-hover:text-cyan-300 transition">VirtuoFlow Works</h4>
-                        <p class="text-slate-400 mb-8 leading-relaxed">
+                        <h4 class="text-2xl font-bold mb-4 text-white group-hover:text-cyan-300 transition-colors">VirtuoFlow Works</h4>
+                        <p class="text-slate-400 mb-8 leading-relaxed font-light">
                             Da ideia ao ambiente de produção com velocidade. Desenvolvemos soluções robustas, integrações avançadas e automações inteligentes.
                         </p>
                         <ul class="space-y-3.5 text-sm text-slate-300 mb-8">
@@ -136,53 +135,53 @@
     </section>
 
     <!-- Ecossistema SaaS -->
-    <section id="ecossistema" class="py-28 px-6 bg-slate-900/30 border-t border-slate-900">
+    <section id="ecossistema" class="py-28 px-6 border-t border-slate-900/60 bg-darkBg">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-20">
                 <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Produtos Próprios</h2>
                 <h3 class="text-3xl md:text-4xl font-extrabold mb-4 text-white">Ecossistema SaaS VirtuoFlow</h3>
-                <p class="text-slate-400">Plataformas desenvolvidas com o mesmo rigor de engenharia, divididas por verticais de mercado.</p>
+                <p class="text-slate-400">Plataformas desenvolvidas com rigor de engenharia, divididas por verticais de mercado.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Corporativo & Governança -->
-                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl backdrop-blur-sm">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-bold">🏢</div>
+                <div class="bg-cardBg border border-slate-800/80 p-8 md:p-10 rounded-3xl backdrop-blur-sm shadow-xl">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl font-bold">🏢</div>
                         <div>
-                            <h4 class="text-lg font-bold text-white">Governança & Corporativo</h4>
+                            <h4 class="text-xl font-bold text-white">Governança & Corporativo</h4>
                             <p class="text-xs text-slate-400">Visibilidade e inteligência para ambientes complexos.</p>
                         </div>
                     </div>
                     <div class="space-y-4">
-                        <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 hover:border-indigo-500/40 transition">
-                            <strong class="text-white block mb-1">LandscapeIT</strong>
-                            <p class="text-xs text-slate-400 leading-relaxed">Gestão completa de ativos de TI, impacto de mudanças e governança visual integrada.</p>
+                        <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800/80 hover:border-indigo-500/40 transition-all">
+                            <strong class="text-white block mb-1 text-base">LandscapeIT</strong>
+                            <p class="text-xs text-slate-400 leading-relaxed font-light">Gestão completa de ativos de TI, impacto de mudanças e governança visual integrada.</p>
                         </div>
-                        <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 hover:border-indigo-500/40 transition">
-                            <strong class="text-white block mb-1">Edumind</strong>
-                            <p class="text-xs text-slate-400 leading-relaxed">Aplicação inteligente com IA para suporte ao desenvolvimento e desempenho de alunos.</p>
+                        <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800/80 hover:border-indigo-500/40 transition-all">
+                            <strong class="text-white block mb-1 text-base">Edumind</strong>
+                            <p class="text-xs text-slate-400 leading-relaxed font-light">Aplicação inteligente com IA para suporte ao desenvolvimento e desempenho de alunos.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Ministérios & Igrejas -->
-                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl backdrop-blur-sm">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold">⛪</div>
+                <div class="bg-cardBg border border-slate-800/80 p-8 md:p-10 rounded-3xl backdrop-blur-sm shadow-xl">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl font-bold">⛪</div>
                         <div>
-                            <h4 class="text-lg font-bold text-white">Tecnologia para Ministérios</h4>
+                            <h4 class="text-xl font-bold text-white">Tecnologia para Ministérios</h4>
                             <p class="text-xs text-slate-400">Ferramentas de suporte à liderança e gestão eclesiástica.</p>
                         </div>
                     </div>
                     <div class="space-y-4">
-                        <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition">
-                            <strong class="text-white block mb-1">Meu Pastor</strong>
-                            <p class="text-xs text-slate-400 leading-relaxed">Organização de sermões, textos temáticos e ferramentas de apoio ao cuidado pastoral.</p>
+                        <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all">
+                            <strong class="text-white block mb-1 text-base">Meu Pastor</strong>
+                            <p class="text-xs text-slate-400 leading-relaxed font-light">Organização de sermões, textos temáticos e ferramentas de apoio ao cuidado pastoral.</p>
                         </div>
-                        <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition">
-                            <strong class="text-white block mb-1">Estratégia Church</strong>
-                            <p class="text-xs text-slate-400 leading-relaxed">Planejamento estratégico, organização de convenções e alinhamento de ações ministeriais.</p>
+                        <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all">
+                            <strong class="text-white block mb-1 text-base">Estratégia Church</strong>
+                            <p class="text-xs text-slate-400 leading-relaxed font-light">Planejamento estratégico, organização de convenções e alinhamento de ações ministeriais.</p>
                         </div>
                     </div>
                 </div>
@@ -191,53 +190,64 @@
     </section>
 
     <!-- Metodo / Principios -->
-    <section id="metodo" class="py-28 px-6 border-t border-slate-900">
-        <div class="max-w-4xl mx-auto text-center">
+    <section id="metodo" class="py-28 px-6 border-t border-slate-900/60 bg-[#070a14]">
+        <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Nosso Padrão</h2>
             <h3 class="text-3xl md:text-4xl font-extrabold mb-16 text-white">Princípios inegociáveis</h3>
             <div class="grid sm:grid-cols-3 gap-8 text-left">
-                <div class="bg-slate-900/40 p-8 rounded-2xl border border-slate-800">
+                <div class="bg-cardBg p-8 rounded-3xl border border-slate-800/80 shadow-lg">
                     <div class="text-indigo-400 font-mono text-sm font-bold mb-3">01.</div>
                     <h4 class="font-bold text-white mb-2 text-lg">Método antes de código</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Compreendemos profundamente o problema da operação antes de propor qualquer solução técnica.</p>
+                    <p class="text-sm text-slate-400 leading-relaxed font-light">Compreendemos profundamente o problema da operação antes de propor qualquer solução técnica.</p>
                 </div>
-                <div class="bg-slate-900/40 p-8 rounded-2xl border border-slate-800">
+                <div class="bg-cardBg p-8 rounded-3xl border border-slate-800/80 shadow-lg">
                     <div class="text-indigo-400 font-mono text-sm font-bold mb-3">02.</div>
                     <h4 class="font-bold text-white mb-2 text-lg">Honestidade técnica</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Direcionamento transparente sobre o que a tecnologia pode entregar de real para o negócio.</p>
+                    <p class="text-sm text-slate-400 leading-relaxed font-light">Direcionamento transparente sobre o que a tecnologia pode entregar de real para o negócio.</p>
                 </div>
-                <div class="bg-slate-900/40 p-8 rounded-2xl border border-slate-800">
+                <div class="bg-cardBg p-8 rounded-3xl border border-slate-800/80 shadow-lg">
                     <div class="text-indigo-400 font-mono text-sm font-bold mb-3">03.</div>
                     <h4 class="font-bold text-white mb-2 text-lg">Arquitetura para durar</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Código limpo, documentação sólida e sustentabilidade estrutural como padrão obrigatório.</p>
+                    <p class="text-sm text-slate-400 leading-relaxed font-light">Código limpo, documentação sólida e sustentabilidade estrutural como padrão obrigatório.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contato / CTA Final -->
-    <section id="contato" class="py-28 px-6">
-        <div class="max-w-4xl mx-auto bg-gradient-to-b from-indigo-950/40 via-slate-900 to-slate-900 border border-indigo-500/20 p-10 md:p-16 rounded-3xl text-center shadow-2xl relative overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-64 h-64 bg-indigo-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+    <section id="contato" class="py-28 px-6 bg-darkBg border-t border-slate-900/60">
+        <div class="max-w-4xl mx-auto bg-gradient-to-b from-indigo-950/50 via-cardBg to-cardBg border border-indigo-500/20 p-10 md:p-16 rounded-3xl text-center shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-32 -right-32 w-80 h-80 bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none"></div>
             
             <h3 class="text-3xl md:text-4xl font-extrabold mb-4 text-white">Pronto para colocar sua operação em fluxo?</h3>
-            <p class="text-slate-400 mb-10 max-w-xl mx-auto text-base leading-relaxed">
-                Entre em contato direto para conversarmos sobre um diagnóstico de TI e Inteligência Artificial para a sua empresa.
+            <p class="text-slate-400 mb-10 max-w-xl mx-auto text-base leading-relaxed font-light">
+                Entre em contato direto com a nossa equipe para conversarmos sobre um diagnóstico de TI e Inteligência Artificial.
             </p>
-            <a href="mailto:contato@virtuoflow.cloud" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-9 py-4 rounded-xl transition shadow-xl shadow-indigo-600/30 text-base border border-indigo-400/30">
-                Iniciar Conversa por E-mail
-            </a>
+            
+            <!-- Botões de Contato Direto -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                <a href="https://wa.me/5531990920985?text=Olá,%20vim%20pelo%20site%20da%20VirtuoFlow%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-emerald-600/30 flex items-center justify-center gap-2.5 border border-emerald-400/30">
+                    <span>Chamar no WhatsApp (31) 99092-0985</span>
+                </a>
+                <a href="mailto:comercial@virtuoflow.com.br" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-indigo-600/30 flex items-center justify-center gap-2.5 border border-indigo-400/30">
+                    <span>Enviar E-mail Comercial</span>
+                </a>
+            </div>
+            
+            <p class="text-xs text-slate-500 font-mono">
+                E-mail: comercial@virtuoflow.com.br | Domínio: virtuoflow.com.br
+            </p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 border-t border-slate-900 text-center text-xs text-slate-500">
+    <footer class="py-10 border-t border-slate-900/80 text-center text-xs text-slate-500 bg-darkBg">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-2">
                 <span class="font-bold text-slate-300">VIRTUOFLOW</span>
                 <span>— Tecnologia, automação e inteligência.</span>
             </div>
-            <p>&copy; 2026 VirtuoFlow. Todos os direitos reservados.</p>
+            <p>&copy; 2026 VirtuoFlow. Todos os direitos reservados. (virtuoflow.com.br)</p>
         </div>
     </footer>
 
