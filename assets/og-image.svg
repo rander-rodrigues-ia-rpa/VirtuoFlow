@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="vf-depth" x1="4" y1="8" x2="32" y2="56" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1E3A8A"/><stop offset="1" stop-color="#2563EB"/></linearGradient>
+    <linearGradient id="vf-flow" x1="32" y1="56" x2="58" y2="8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4F46E5"/><stop offset=".5" stop-color="#2563EB"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
+    <linearGradient id="vf-stream" x1="32" y1="56" x2="60" y2="17" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".42" r=".6"><stop offset="0" stop-color="#2563EB" stop-opacity=".35"/><stop offset="1" stop-color="#05070D" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#1E293B" stroke-opacity=".5"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#05070D"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(536 110) scale(2)">
+    <path d="M4 8H15.5L32 36.3V56Z" fill="url(#vf-depth)"/>
+    <path d="M32 36.3L48.5 8H55L32 47.4Z" fill="url(#vf-flow)"/>
+    <path d="M32 50.6L55.5 17H60L32 56Z" fill="url(#vf-stream)"/>
+  </g>
+  <text x="600" y="345" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif" font-size="92" font-weight="800" letter-spacing="-3" fill="#F8FAFC">Virtuo<tspan fill="#38BDF8" font-weight="400">Flow</tspan></text>
+  <text x="600" y="400" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif" font-size="22" font-weight="600" letter-spacing="7" fill="#94A3B8">SOLUÇÕES EM IA &amp; TECNOLOGIA</text>
+  <text x="600" y="520" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif" font-size="30" font-weight="500" fill="#CBD5E1">Tecnologia e processos em perfeito fluxo.</text>
+</svg>

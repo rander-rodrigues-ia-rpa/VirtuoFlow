@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 112" role="img" aria-label="VirtuoFlow — Soluções em IA &amp; Tecnologia">
+  <defs>
+    <linearGradient id="vf-depth" x1="4" y1="8" x2="32" y2="56" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1E3A8A"/><stop offset="1" stop-color="#2563EB"/></linearGradient>
+    <linearGradient id="vf-flow" x1="32" y1="56" x2="58" y2="8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4F46E5"/><stop offset=".5" stop-color="#2563EB"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
+    <linearGradient id="vf-stream" x1="32" y1="56" x2="60" y2="17" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
+  </defs>
+  <g transform="translate(8 8) scale(1.5)">
+    <path d="M4 8H15.5L32 36.3V56Z" fill="url(#vf-depth)"/>
+    <path d="M32 36.3L48.5 8H55L32 47.4Z" fill="url(#vf-flow)"/>
+    <path d="M32 50.6L55.5 17H60L32 56Z" fill="url(#vf-stream)"/>
+  </g>
+  <text x="124" y="66" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif" font-size="52" font-weight="800" letter-spacing="-1.5" fill="#F8FAFC">Virtuo<tspan fill="#38BDF8" font-weight="400">Flow</tspan></text>
+  <text x="127" y="94" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif" font-size="12.5" font-weight="600" letter-spacing="4" fill="#94A3B8">SOLUÇÕES EM IA &amp; TECNOLOGIA</text>
+</svg>

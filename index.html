@@ -3,7 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VirtuoFlow | Tecnologia, Automação e Inteligência</title>
+    <title>VirtuoFlow | Soluções em IA &amp; Tecnologia</title>
+    <meta name="description" content="Consultoria em Inteligência Artificial, fábrica de software e automação de processos. Transformamos operações complexas em estruturas eficientes, escaláveis e guiadas por dados.">
+    <meta name="theme-color" content="#05070D">
+    <link rel="canonical" href="https://virtuoflow.com.br/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="VirtuoFlow">
+    <meta property="og:title" content="VirtuoFlow | Soluções em IA & Tecnologia">
+    <meta property="og:description" content="Tecnologia e processos em perfeito fluxo. Consultoria em IA, fábrica de software e automação.">
+    <meta property="og:url" content="https://virtuoflow.com.br/">
+    <meta property="og:image" content="https://virtuoflow.com.br/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -11,177 +33,401 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#05070d',
-                        cardBg: '#0b0f19',
-                    }
+                        ink: '#05070D',
+                        ink2: '#0A0F1C',
+                        flow: {
+                            sky: '#38BDF8',
+                            blue: '#2563EB',
+                            indigo: '#4F46E5',
+                            navy: '#1E3A8A',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+                    },
                 }
             }
         }
     </script>
-</head>
-<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+    <style>
+        .text-flow {
+            background: linear-gradient(120deg, #7DD3FC 0%, #38BDF8 30%, #2563EB 65%, #818CF8 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            animation: shine 8s linear infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 w-full bg-[#05070d]/75 backdrop-blur-2xl border-b border-slate-900/80 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-xl font-black tracking-wider text-white flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/25">
-                    <span class="text-white text-base font-black">V</span>
-                </div>
-                VIRTUO<span class="text-indigo-400 font-light">FLOW</span>
-            </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#solucoes" class="hover:text-indigo-400 transition-colors">Soluções</a>
-                <a href="#ecossistema" class="hover:text-indigo-400 transition-colors">Ecossistema SaaS</a>
-                <a href="#metodo" class="hover:text-indigo-400 transition-colors">Nosso Método</a>
-                <a href="#contato" class="hover:text-indigo-400 transition-colors">Contato</a>
+        .bg-grid {
+            background-image:
+                linear-gradient(to right, rgba(148,163,184,.07) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(148,163,184,.07) 1px, transparent 1px);
+            background-size: 56px 56px;
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 100%);
+                    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 100%);
+        }
+
+        /* Borda com gradiente para cards */
+        .card {
+            position: relative;
+            background: linear-gradient(180deg, rgba(15,23,42,.75), rgba(10,15,28,.9));
+            border: 1px solid rgba(51,65,85,.55);
+            transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56,189,248,.45);
+            box-shadow: 0 24px 60px -20px rgba(37,99,235,.35);
+        }
+
+        /* Linhas de fluxo animadas */
+        .flow-line { stroke-dasharray: 6 10; animation: dash 1.6s linear infinite; }
+        @keyframes dash { to { stroke-dashoffset: -32; } }
+
+        .float { animation: float 7s ease-in-out infinite; }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        .marquee { animation: marquee 32s linear infinite; }
+        @keyframes marquee { to { transform: translateX(-50%); } }
+
+        /* Revelação no scroll */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+        .reveal.is-visible { opacity: 1; transform: none; }
+
+        /* Animação de entrada do símbolo */
+        .mark-draw path { transform-origin: 50% 100%; animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
+        .mark-draw path:nth-child(2) { animation-delay: .12s; }
+        .mark-draw path:nth-child(3) { animation-delay: .24s; }
+        @keyframes rise { from { opacity: 0; transform: translateY(8px) scaleY(.6); } }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .reveal { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body class="bg-ink text-slate-100 font-sans antialiased selection:bg-flow-blue selection:text-white overflow-x-hidden">
+
+    <!-- Sprite da marca (símbolo V-Flow) -->
+    <svg width="0" height="0" class="absolute" aria-hidden="true">
+        <defs>
+            <linearGradient id="vf-depth" x1="4" y1="8" x2="32" y2="56" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1E3A8A"/><stop offset="1" stop-color="#2563EB"/></linearGradient>
+            <linearGradient id="vf-flow" x1="32" y1="56" x2="58" y2="8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4F46E5"/><stop offset=".5" stop-color="#2563EB"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
+            <linearGradient id="vf-stream" x1="32" y1="56" x2="60" y2="17" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
+            <symbol id="vf-mark" viewBox="0 0 64 64">
+                <g>
+                    <path d="M4 8H15.5L32 36.3V56Z" fill="url(#vf-depth)"/>
+                    <path d="M32 36.3L48.5 8H55L32 47.4Z" fill="url(#vf-flow)"/>
+                    <path d="M32 50.6L55.5 17H60L32 56Z" fill="url(#vf-stream)"/>
+                </g>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- Header -->
+    <header id="topo" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group" aria-label="VirtuoFlow — início">
+                <svg class="w-9 h-9 transition-transform duration-300 group-hover:scale-110"><use href="#vf-mark"/></svg>
+                <span class="leading-none">
+                    <span class="block text-xl font-extrabold tracking-tight text-white">Virtuo<span class="font-normal text-flow-sky">Flow</span></span>
+                    <span class="hidden sm:block text-[9px] font-semibold tracking-[.28em] text-slate-400 mt-1">SOLUÇÕES EM IA &amp; TECNOLOGIA</span>
+                </span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-300">
+                <a href="#solucoes" class="px-4 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Soluções</a>
+                <a href="#metodo" class="px-4 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Método</a>
+                <a href="#ecossistema" class="px-4 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Produtos</a>
+                <a href="#principios" class="px-4 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Princípios</a>
+                <a href="#contato" class="px-4 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Contato</a>
             </nav>
-            <div>
-                <a href="https://wa.me/5531990920985?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20VirtuoFlow." target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-indigo-600/30 border border-indigo-400/30 flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span>WhatsApp Direto</span>
+
+            <div class="flex items-center gap-2">
+                <a href="https://wa.me/5531990920985?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20VirtuoFlow." target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-flow-blue hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-blue-600/30 ring-1 ring-inset ring-white/15">
+                    <span class="relative flex w-2 h-2"><span class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-75"></span><span class="relative w-2 h-2 rounded-full bg-emerald-400"></span></span>
+                    Falar com especialista
                 </a>
+                <button id="menuBtn" class="lg:hidden w-11 h-11 inline-flex items-center justify-center rounded-xl border border-slate-800 bg-slate-900/70 text-slate-200" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path id="menuIcon" d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
             </div>
+        </div>
+
+        <!-- Menu mobile -->
+        <div id="mobileMenu" class="lg:hidden hidden border-t border-slate-800/80 bg-ink/95 backdrop-blur-xl">
+            <nav class="px-4 py-4 flex flex-col text-base font-medium text-slate-200">
+                <a href="#solucoes" class="py-3 border-b border-slate-800/60">Soluções</a>
+                <a href="#metodo" class="py-3 border-b border-slate-800/60">Método</a>
+                <a href="#ecossistema" class="py-3 border-b border-slate-800/60">Produtos</a>
+                <a href="#principios" class="py-3 border-b border-slate-800/60">Princípios</a>
+                <a href="#contato" class="py-3">Contato</a>
+                <a href="https://wa.me/5531990920985?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20VirtuoFlow." target="_blank" rel="noopener" class="mt-3 text-center bg-flow-blue text-white py-3 rounded-xl font-semibold">Falar com especialista</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-44 pb-32 md:pt-56 md:pb-40 px-6 overflow-hidden">
-        <!-- Background Lighting / Glow -->
-        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-indigo-600/20 to-cyan-500/20 blur-[140px] rounded-full pointer-events-none"></div>
+    <main>
+    <!-- Hero -->
+    <section class="relative pt-36 pb-24 md:pt-44 md:pb-32 px-4 sm:px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-grid pointer-events-none"></div>
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] max-w-[140vw] h-[520px] bg-gradient-to-tr from-flow-indigo/25 via-flow-blue/20 to-flow-sky/20 blur-[120px] rounded-full pointer-events-none"></div>
 
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2.5 bg-slate-900/80 border border-slate-800 text-indigo-300 text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-widest mb-8 shadow-inner backdrop-blur-md">
-                <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
-                Engenharia de Software • Consultoria em IA • Automação Avançada
+        <div class="max-w-7xl mx-auto relative grid lg:grid-cols-12 gap-14 items-center">
+            <!-- Texto -->
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <div class="inline-flex flex-wrap justify-center items-center gap-x-2 gap-y-1 bg-slate-900/70 border border-slate-800 text-sky-300 text-[11px] font-semibold px-4 py-2 rounded-full uppercase tracking-[.18em] mb-8 backdrop-blur-md">
+                    <span class="w-1.5 h-1.5 rounded-full bg-flow-sky"></span>
+                    Consultoria em IA <span class="text-slate-600">/</span> Software <span class="text-slate-600">/</span> Automação
+                </div>
+
+                <h1 class="text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-7">
+                    Tecnologia e processos em <span class="text-flow">perfeito fluxo.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+                    Transformamos operações complexas em estruturas eficientes, escaláveis e guiadas por dados. Rigor técnico e inteligência aplicada para o seu negócio.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                    <a href="https://wa.me/5531990920985?text=Olá,%20gostaria%20de%20solicitar%20um%20diagnóstico%20estratégico%20para%20minha%20empresa." target="_blank" rel="noopener" class="group inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-flow-blue to-flow-indigo text-white font-semibold px-8 py-4 rounded-xl shadow-xl shadow-blue-600/30 ring-1 ring-inset ring-white/20 hover:brightness-110 transition-all">
+                        Solicitar diagnóstico
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                    </a>
+                    <a href="#solucoes" class="inline-flex items-center justify-center bg-slate-900/70 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold px-8 py-4 rounded-xl transition-all backdrop-blur-md">
+                        Explorar soluções
+                    </a>
+                </div>
+
+                <div class="mt-12 flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-3 text-sm text-slate-400">
+                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-flow-sky" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>Do diagnóstico à produção</span>
+                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-flow-sky" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>IA sem hype</span>
+                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-flow-sky" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>Arquitetura para durar</span>
+                </div>
             </div>
-            
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 text-white leading-[1.08]">
-                Tecnologia e processos em <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-300 to-cyan-400">perfeito fluxo.</span>
-            </h1>
-            
-            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-                Transformamos operações complexas em estruturas eficientes, escaláveis e guiadas por dados. Rigor técnico e inteligência aplicada para o seu negócio.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/5531990920985?text=Olá,%20gostaria%20de%20solicitar%20um%20diagnóstico%20estratégico%20para%20minha%20empresa." target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-4 rounded-xl transition-all shadow-xl shadow-indigo-600/30 text-base border border-indigo-400/30 flex items-center justify-center gap-2.5">
-                    <span>Solicitar Diagnóstico via WhatsApp</span>
-                </a>
-                <a href="#solucoes" class="bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 font-semibold px-8 py-4 rounded-xl transition-all text-base backdrop-blur-md">
-                    Explorar Atuação
-                </a>
+
+            <!-- Visual: pipeline de fluxo -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-md float">
+                    <div class="absolute inset-0 bg-flow-blue/20 blur-3xl rounded-full"></div>
+                    <div class="relative rounded-3xl border border-slate-800 bg-ink2/80 backdrop-blur-xl p-6 shadow-2xl">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                            </div>
+                            <span class="font-mono text-[11px] text-slate-500">virtuoflow://pipeline</span>
+                        </div>
+
+                        <div class="flex justify-center py-4">
+                            <svg class="w-28 h-28 mark-draw drop-shadow-[0_0_30px_rgba(56,189,248,.35)]" viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M4 8H15.5L32 36.3V56Z" fill="url(#vf-depth)"/>
+                                <path d="M32 36.3L48.5 8H55L32 47.4Z" fill="url(#vf-flow)"/>
+                                <path d="M32 50.6L55.5 17H60L32 56Z" fill="url(#vf-stream)"/>
+                            </svg>
+                        </div>
+
+                        <div class="space-y-0 mt-4">
+                            <div class="flex items-center gap-3 rounded-xl bg-slate-900/80 border border-slate-800 px-4 py-3">
+                                <span class="w-8 h-8 rounded-lg bg-flow-navy/40 text-sky-300 flex items-center justify-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg></span>
+                                <div class="flex-1"><div class="text-sm font-semibold text-white">Diagnóstico</div><div class="text-xs text-slate-500">Gargalos mapeados</div></div>
+                                <span class="font-mono text-[11px] text-emerald-400">ok</span>
+                            </div>
+                            <svg class="w-full h-6" viewBox="0 0 300 24" preserveAspectRatio="none"><path class="flow-line" d="M36 0V24" stroke="#38BDF8" stroke-width="2" fill="none"/></svg>
+                            <div class="flex items-center gap-3 rounded-xl bg-slate-900/80 border border-slate-800 px-4 py-3">
+                                <span class="w-8 h-8 rounded-lg bg-flow-blue/25 text-sky-300 flex items-center justify-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 12h4l3-8 4 16 3-8h2"/></svg></span>
+                                <div class="flex-1"><div class="text-sm font-semibold text-white">Automação</div><div class="text-xs text-slate-500">APIs · n8n · microsserviços</div></div>
+                                <span class="font-mono text-[11px] text-emerald-400">ok</span>
+                            </div>
+                            <svg class="w-full h-6" viewBox="0 0 300 24" preserveAspectRatio="none"><path class="flow-line" d="M36 0V24" stroke="#38BDF8" stroke-width="2" fill="none"/></svg>
+                            <div class="flex items-center gap-3 rounded-xl bg-gradient-to-r from-flow-blue/20 to-flow-indigo/10 border border-flow-sky/30 px-4 py-3">
+                                <span class="w-8 h-8 rounded-lg bg-flow-sky/20 text-sky-200 flex items-center justify-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6 2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></span>
+                                <div class="flex-1"><div class="text-sm font-semibold text-white">Inteligência aplicada</div><div class="text-xs text-slate-400">Decisões guiadas por dados</div></div>
+                                <span class="font-mono text-[11px] text-sky-300 animate-pulse">run</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- As Frentes de Atuação (Soluções) -->
-    <section id="solucoes" class="py-28 px-6 relative border-t border-slate-900/60 bg-[#070a14]">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-20">
-                <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Portfólio de Atuação</h2>
-                <h3 class="text-3xl md:text-4xl font-extrabold mb-4 text-white">Engenharia e inteligência sob medida</h3>
-                <p class="text-slate-400">Atuamos desde a diretoria estratégica até o desenvolvimento do código em produção.</p>
+    <!-- Faixa de stack -->
+    <section class="border-y border-slate-900 bg-ink2/60 py-6 overflow-hidden" aria-label="Tecnologias">
+        <div class="flex w-max marquee gap-12 font-mono text-sm text-slate-500 whitespace-nowrap">
+            <div class="flex gap-12">
+                <span>Python</span><span class="text-flow-sky">◆</span><span>FastAPI</span><span class="text-flow-sky">◆</span><span>Docker</span><span class="text-flow-sky">◆</span><span>n8n</span><span class="text-flow-sky">◆</span><span>LLMs &amp; IA Generativa</span><span class="text-flow-sky">◆</span><span>PostgreSQL</span><span class="text-flow-sky">◆</span><span>APIs REST</span><span class="text-flow-sky">◆</span><span>Microsserviços</span><span class="text-flow-sky">◆</span><span>Governança de Dados</span><span class="text-flow-sky">◆</span>
             </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- VirtuoFlow AI (Consultoria) -->
-                <div class="bg-gradient-to-b from-slate-900/70 to-cardBg border border-slate-800/80 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-indigo-500/50 transition-all group shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 blur-[50px] pointer-events-none"></div>
-                    <div>
-                        <div class="flex items-center justify-between mb-8">
-                            <span class="text-xs bg-indigo-500/10 text-indigo-400 font-mono px-3.5 py-1.5 rounded-lg border border-indigo-500/20 font-semibold">FRENTE 01</span>
-                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Consultoria & IA</span>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-4 text-white group-hover:text-indigo-300 transition-colors">VirtuoFlow AI</h4>
-                        <p class="text-slate-400 mb-8 leading-relaxed font-light">
-                            Diagnósticos profundos da operação para identificar gargalos, desperdícios e oportunidades reais de ganho com tecnologia e inteligência artificial aplicada.
-                        </p>
-                        <ul class="space-y-3.5 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center"><span class="text-indigo-400 mr-3 font-bold">✓</span> Diagnóstico de eficiência e maturidade tecnológica</li>
-                            <li class="flex items-center"><span class="text-indigo-400 mr-3 font-bold">✓</span> Governança de TI e diretrizes de dados</li>
-                            <li class="flex items-center"><span class="text-indigo-400 mr-3 font-bold">✓</span> Adoção prática de IA sem modismos ou hype</li>
-                        </ul>
-                    </div>
-                    <div class="border-t border-slate-800/80 pt-6 text-xs text-slate-400">
-                        <strong class="text-slate-200">Ideal para:</strong> Gestores que buscam clareza estratégica antes de investir.
-                    </div>
-                </div>
+            <div class="flex gap-12" aria-hidden="true">
+                <span>Python</span><span class="text-flow-sky">◆</span><span>FastAPI</span><span class="text-flow-sky">◆</span><span>Docker</span><span class="text-flow-sky">◆</span><span>n8n</span><span class="text-flow-sky">◆</span><span>LLMs &amp; IA Generativa</span><span class="text-flow-sky">◆</span><span>PostgreSQL</span><span class="text-flow-sky">◆</span><span>APIs REST</span><span class="text-flow-sky">◆</span><span>Microsserviços</span><span class="text-flow-sky">◆</span><span>Governança de Dados</span><span class="text-flow-sky">◆</span>
+            </div>
+        </div>
+    </section>
 
-                <!-- VirtuoFlow Works (Fábrica de Software) -->
-                <div class="bg-gradient-to-b from-slate-900/70 to-cardBg border border-slate-800/80 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-cyan-500/50 transition-all group shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 blur-[50px] pointer-events-none"></div>
-                    <div>
-                        <div class="flex items-center justify-between mb-8">
-                            <span class="text-xs bg-cyan-500/10 text-cyan-400 font-mono px-3.5 py-1.5 rounded-lg border border-cyan-500/20 font-semibold">FRENTE 02</span>
-                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Fábrica de Software</span>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-4 text-white group-hover:text-cyan-300 transition-colors">VirtuoFlow Works</h4>
-                        <p class="text-slate-400 mb-8 leading-relaxed font-light">
-                            Da ideia ao ambiente de produção com velocidade. Desenvolvemos soluções robustas, integrações avançadas e automações inteligentes.
-                        </p>
-                        <ul class="space-y-3.5 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center"><span class="text-cyan-400 mr-3 font-bold">✓</span> Desenvolvimento ágil de MVPs e Sistemas Web</li>
-                            <li class="flex items-center"><span class="text-cyan-400 mr-3 font-bold">✓</span> Automação de processos (n8n, APIs e microsserviços)</li>
-                            <li class="flex items-center"><span class="text-cyan-400 mr-3 font-bold">✓</span> Stack moderna: Python/FastAPI, Docker e Bancos SQL</li>
-                        </ul>
-                    </div>
-                    <div class="border-t border-slate-800/80 pt-6 text-xs text-slate-400">
-                        <strong class="text-slate-200">Ideal para:</strong> Empresas que precisam escalar produtos ou eliminar processos manuais.
-                    </div>
-                </div>
+    <!-- Soluções -->
+    <section id="solucoes" class="py-24 md:py-32 px-4 sm:px-6 relative scroll-mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-2xl mb-16 reveal">
+                <p class="font-mono text-xs uppercase tracking-[.25em] text-flow-sky mb-4">// Portfólio de atuação</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-5">Engenharia e inteligência sob medida</h2>
+                <p class="text-lg text-slate-400">Atuamos desde a diretoria estratégica até o desenvolvimento do código em produção.</p>
             </div>
+
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- VirtuoFlow AI -->
+                <article class="card rounded-3xl p-8 md:p-10 flex flex-col overflow-hidden reveal">
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-flow-indigo/15 blur-3xl rounded-full pointer-events-none"></div>
+                    <div class="flex items-center justify-between mb-10">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-flow-indigo to-flow-blue flex items-center justify-center shadow-lg shadow-indigo-600/30">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 3a3.5 3.5 0 0 0-3.4 4.3A3.5 3.5 0 0 0 4 13.5a3.5 3.5 0 0 0 3 5.3A3 3 0 0 0 12 20V4.5A2.5 2.5 0 0 0 9.5 3Zm5 0a3.5 3.5 0 0 1 3.4 4.3 3.5 3.5 0 0 1 2.1 6.2 3.5 3.5 0 0 1-3 5.3A3 3 0 0 1 12 20"/></svg>
+                        </div>
+                        <span class="font-mono text-xs text-slate-500">FRENTE 01 · Consultoria &amp; IA</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">VirtuoFlow <span class="text-indigo-300">AI</span></h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Diagnósticos profundos da operação para identificar gargalos, desperdícios e oportunidades reais de ganho com tecnologia e inteligência artificial aplicada.
+                    </p>
+                    <ul class="space-y-3.5 text-sm text-slate-300 mb-10">
+                        <li class="flex gap-3"><svg class="w-5 h-5 shrink-0 text-indigo-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>Diagnóstico de eficiência e maturidade tecnológica</li>
+                        <li class="flex gap-3"><svg class="w-5 h-5 shrink-0 text-indigo-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>Governança de TI e diretrizes de dados</li>
+                        <li class="flex gap-3"><svg class="w-5 h-5 shrink-0 text-indigo-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>Adoção prática de IA sem modismos ou hype</li>
+                    </ul>
+                    <div class="mt-auto rounded-2xl bg-slate-950/70 border border-slate-800 px-5 py-4 text-sm text-slate-400">
+                        <strong class="text-slate-200">Ideal para:</strong> gestores que buscam clareza estratégica antes de investir.
+                    </div>
+                </article>
+
+                <!-- VirtuoFlow Works -->
+                <article class="card rounded-3xl p-8 md:p-10 flex flex-col overflow-hidden reveal" style="transition-delay:.1s">
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-flow-sky/15 blur-3xl rounded-full pointer-events-none"></div>
+                    <div class="flex items-center justify-between mb-10">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-flow-blue to-flow-sky flex items-center justify-center shadow-lg shadow-sky-500/30">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m8 8-4 4 4 4m8-8 4 4-4 4M14 4l-4 16"/></svg>
+                        </div>
+                        <span class="font-mono text-xs text-slate-500">FRENTE 02 · Fábrica de Software</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">VirtuoFlow <span class="text-sky-300">Works</span></h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Da ideia ao ambiente de produção com velocidade. Desenvolvemos soluções robustas, integrações avançadas e automações inteligentes.
+                    </p>
+                    <ul class="space-y-3.5 text-sm text-slate-300 mb-10">
+                        <li class="flex gap-3"><svg class="w-5 h-5 shrink-0 text-sky-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>Desenvolvimento ágil de MVPs e sistemas web</li>
+                        <li class="flex gap-3"><svg class="w-5 h-5 shrink-0 text-sky-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>Automação de processos (n8n, APIs e microsserviços)</li>
+                        <li class="flex gap-3"><svg class="w-5 h-5 shrink-0 text-sky-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>Stack moderna: Python/FastAPI, Docker e bancos SQL</li>
+                    </ul>
+                    <div class="mt-auto rounded-2xl bg-slate-950/70 border border-slate-800 px-5 py-4 text-sm text-slate-400">
+                        <strong class="text-slate-200">Ideal para:</strong> empresas que precisam escalar produtos ou eliminar processos manuais.
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Método -->
+    <section id="metodo" class="py-24 md:py-32 px-4 sm:px-6 bg-ink2/60 border-y border-slate-900 relative overflow-hidden scroll-mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-2xl mb-16 reveal">
+                <p class="font-mono text-xs uppercase tracking-[.25em] text-flow-sky mb-4">// Como trabalhamos</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-5">Do problema ao resultado, em fluxo contínuo</h2>
+                <p class="text-lg text-slate-400">Um caminho claro, com entregas visíveis a cada etapa.</p>
+            </div>
+
+            <ol class="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="hidden lg:block absolute top-7 left-8 right-8 h-px bg-gradient-to-r from-flow-navy via-flow-blue to-flow-sky"></div>
+                <li class="relative reveal">
+                    <div class="relative w-14 h-14 rounded-2xl bg-ink border border-flow-navy flex items-center justify-center font-mono font-semibold text-sky-300 mb-6">01</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Diagnóstico</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Imersão na operação para entender processos, dados e gargalos reais.</p>
+                </li>
+                <li class="relative reveal" style="transition-delay:.08s">
+                    <div class="relative w-14 h-14 rounded-2xl bg-ink border border-flow-blue/70 flex items-center justify-center font-mono font-semibold text-sky-300 mb-6">02</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Desenho da solução</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Arquitetura, prioridades e estimativas transparentes antes de qualquer código.</p>
+                </li>
+                <li class="relative reveal" style="transition-delay:.16s">
+                    <div class="relative w-14 h-14 rounded-2xl bg-ink border border-flow-blue flex items-center justify-center font-mono font-semibold text-sky-300 mb-6">03</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Construção</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Entregas incrementais, automações e integrações em ambiente de produção.</p>
+                </li>
+                <li class="relative reveal" style="transition-delay:.24s">
+                    <div class="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-flow-blue to-flow-sky flex items-center justify-center font-mono font-semibold text-white mb-6 shadow-lg shadow-sky-500/30">04</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Evolução</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Métricas, ajustes e IA aplicada para ganhos contínuos de eficiência.</p>
+                </li>
+            </ol>
         </div>
     </section>
 
     <!-- Ecossistema SaaS -->
-    <section id="ecossistema" class="py-28 px-6 border-t border-slate-900/60 bg-darkBg">
+    <section id="ecossistema" class="py-24 md:py-32 px-4 sm:px-6 scroll-mt-20">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-20">
-                <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Produtos Próprios</h2>
-                <h3 class="text-3xl md:text-4xl font-extrabold mb-4 text-white">Ecossistema SaaS VirtuoFlow</h3>
-                <p class="text-slate-400">Plataformas desenvolvidas com rigor de engenharia, divididas por verticais de mercado.</p>
+            <div class="max-w-2xl mb-16 reveal">
+                <p class="font-mono text-xs uppercase tracking-[.25em] text-flow-sky mb-4">// Produtos próprios</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-5">Ecossistema SaaS VirtuoFlow</h2>
+                <p class="text-lg text-slate-400">Plataformas desenvolvidas com rigor de engenharia, divididas por verticais de mercado.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Corporativo & Governança -->
-                <div class="bg-cardBg border border-slate-800/80 p-8 md:p-10 rounded-3xl backdrop-blur-sm shadow-xl">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl font-bold">🏢</div>
+            <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Governança & Corporativo -->
+                <div class="reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-flow-indigo/15 border border-flow-indigo/30 flex items-center justify-center text-indigo-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16m0-10h2a2 2 0 0 1 2 2v8M2 21h20M8 7h4m-4 4h4m-4 4h4"/></svg>
+                        </div>
                         <div>
-                            <h4 class="text-xl font-bold text-white">Governança & Corporativo</h4>
-                            <p class="text-xs text-slate-400">Visibilidade e inteligência para ambientes complexos.</p>
+                            <h3 class="text-xl font-bold text-white">Governança &amp; Corporativo</h3>
+                            <p class="text-sm text-slate-400">Visibilidade e inteligência para ambientes complexos.</p>
                         </div>
                     </div>
-                    <div class="space-y-4">
-                        <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800/80 hover:border-indigo-500/40 transition-all">
-                            <strong class="text-white block mb-1 text-base">LandscapeIT</strong>
-                            <p class="text-xs text-slate-400 leading-relaxed font-light">Gestão completa de ativos de TI, impacto de mudanças e governança visual integrada.</p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="card rounded-2xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <svg class="w-6 h-6 text-indigo-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path stroke-linecap="round" d="M17.5 14v7M14 17.5h7"/></svg>
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-slate-500">TI</span>
+                            </div>
+                            <strong class="text-white block mb-2 text-lg">LandscapeIT</strong>
+                            <p class="text-sm text-slate-400 leading-relaxed">Gestão completa de ativos de TI, impacto de mudanças e governança visual integrada.</p>
                         </div>
-                        <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800/80 hover:border-indigo-500/40 transition-all">
-                            <strong class="text-white block mb-1 text-base">Edumind</strong>
-                            <p class="text-xs text-slate-400 leading-relaxed font-light">Aplicação inteligente com IA para suporte ao desenvolvimento e desempenho de alunos.</p>
+                        <div class="card rounded-2xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <svg class="w-6 h-6 text-indigo-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m12 4 10 5-10 5L2 9l10-5Zm-6 7.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5M22 9v6"/></svg>
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-slate-500">Educação</span>
+                            </div>
+                            <strong class="text-white block mb-2 text-lg">Edumind</strong>
+                            <p class="text-sm text-slate-400 leading-relaxed">Aplicação inteligente com IA para suporte ao desenvolvimento e desempenho de alunos.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Ministérios & Igrejas -->
-                <div class="bg-cardBg border border-slate-800/80 p-8 md:p-10 rounded-3xl backdrop-blur-sm shadow-xl">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl font-bold">⛪</div>
+                <!-- Ministérios -->
+                <div class="reveal" style="transition-delay:.1s">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-flow-sky/10 border border-flow-sky/30 flex items-center justify-center text-sky-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v5m-2-3h4M5 21V11l7-4 7 4v10M3 21h18M10 21v-4a2 2 0 0 1 4 0v4"/></svg>
+                        </div>
                         <div>
-                            <h4 class="text-xl font-bold text-white">Tecnologia para Ministérios</h4>
-                            <p class="text-xs text-slate-400">Ferramentas de suporte à liderança e gestão eclesiástica.</p>
+                            <h3 class="text-xl font-bold text-white">Tecnologia para Ministérios</h3>
+                            <p class="text-sm text-slate-400">Ferramentas de suporte à liderança e gestão eclesiástica.</p>
                         </div>
                     </div>
-                    <div class="space-y-4">
-                        <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all">
-                            <strong class="text-white block mb-1 text-base">Meu Pastor</strong>
-                            <p class="text-xs text-slate-400 leading-relaxed font-light">Organização de sermões, textos temáticos e ferramentas de apoio ao cuidado pastoral.</p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="card rounded-2xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <svg class="w-6 h-6 text-sky-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.5C10.5 5 8 4 4 4v14c4 0 6.5 1 8 2.5 1.5-1.5 4-2.5 8-2.5V4c-4 0-6.5 1-8 2.5Zm0 0v14"/></svg>
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-slate-500">Pastoral</span>
+                            </div>
+                            <strong class="text-white block mb-2 text-lg">Meu Pastor</strong>
+                            <p class="text-sm text-slate-400 leading-relaxed">Organização de sermões, textos temáticos e ferramentas de apoio ao cuidado pastoral.</p>
                         </div>
-                        <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all">
-                            <strong class="text-white block mb-1 text-base">Estratégia Church</strong>
-                            <p class="text-xs text-slate-400 leading-relaxed font-light">Planejamento estratégico, organização de convenções e alinhamento de ações ministeriais.</p>
+                        <div class="card rounded-2xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <svg class="w-6 h-6 text-sky-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-slate-500">Estratégia</span>
+                            </div>
+                            <strong class="text-white block mb-2 text-lg">Estratégia Church</strong>
+                            <p class="text-sm text-slate-400 leading-relaxed">Planejamento estratégico, organização de convenções e alinhamento de ações ministeriais.</p>
                         </div>
                     </div>
                 </div>
@@ -189,67 +435,137 @@
         </div>
     </section>
 
-    <!-- Metodo / Principios -->
-    <section id="metodo" class="py-28 px-6 border-t border-slate-900/60 bg-[#070a14]">
-        <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Nosso Padrão</h2>
-            <h3 class="text-3xl md:text-4xl font-extrabold mb-16 text-white">Princípios inegociáveis</h3>
-            <div class="grid sm:grid-cols-3 gap-8 text-left">
-                <div class="bg-cardBg p-8 rounded-3xl border border-slate-800/80 shadow-lg">
-                    <div class="text-indigo-400 font-mono text-sm font-bold mb-3">01.</div>
-                    <h4 class="font-bold text-white mb-2 text-lg">Método antes de código</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed font-light">Compreendemos profundamente o problema da operação antes de propor qualquer solução técnica.</p>
+    <!-- Princípios -->
+    <section id="principios" class="py-24 md:py-32 px-4 sm:px-6 bg-ink2/60 border-y border-slate-900 relative overflow-hidden scroll-mt-20">
+        <!-- Símbolo gigante como marca d'água -->
+        <svg class="absolute -right-24 -bottom-24 w-[520px] h-[520px] opacity-[.06] pointer-events-none" aria-hidden="true"><use href="#vf-mark"/></svg>
+        <div class="max-w-7xl mx-auto relative">
+            <div class="max-w-2xl mb-16 reveal">
+                <p class="font-mono text-xs uppercase tracking-[.25em] text-flow-sky mb-4">// Nosso padrão</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">Princípios inegociáveis</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card rounded-3xl p-8 reveal">
+                    <div class="font-mono text-5xl font-semibold text-flow mb-6">01</div>
+                    <h3 class="font-bold text-white mb-3 text-xl">Método antes de código</h3>
+                    <p class="text-slate-400 leading-relaxed">Compreendemos profundamente o problema da operação antes de propor qualquer solução técnica.</p>
                 </div>
-                <div class="bg-cardBg p-8 rounded-3xl border border-slate-800/80 shadow-lg">
-                    <div class="text-indigo-400 font-mono text-sm font-bold mb-3">02.</div>
-                    <h4 class="font-bold text-white mb-2 text-lg">Honestidade técnica</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed font-light">Direcionamento transparente sobre o que a tecnologia pode entregar de real para o negócio.</p>
+                <div class="card rounded-3xl p-8 reveal" style="transition-delay:.08s">
+                    <div class="font-mono text-5xl font-semibold text-flow mb-6">02</div>
+                    <h3 class="font-bold text-white mb-3 text-xl">Honestidade técnica</h3>
+                    <p class="text-slate-400 leading-relaxed">Direcionamento transparente sobre o que a tecnologia pode entregar de real para o negócio.</p>
                 </div>
-                <div class="bg-cardBg p-8 rounded-3xl border border-slate-800/80 shadow-lg">
-                    <div class="text-indigo-400 font-mono text-sm font-bold mb-3">03.</div>
-                    <h4 class="font-bold text-white mb-2 text-lg">Arquitetura para durar</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed font-light">Código limpo, documentação sólida e sustentabilidade estrutural como padrão obrigatório.</p>
+                <div class="card rounded-3xl p-8 reveal" style="transition-delay:.16s">
+                    <div class="font-mono text-5xl font-semibold text-flow mb-6">03</div>
+                    <h3 class="font-bold text-white mb-3 text-xl">Arquitetura para durar</h3>
+                    <p class="text-slate-400 leading-relaxed">Código limpo, documentação sólida e sustentabilidade estrutural como padrão obrigatório.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contato / CTA Final -->
-    <section id="contato" class="py-28 px-6 bg-darkBg border-t border-slate-900/60">
-        <div class="max-w-4xl mx-auto bg-gradient-to-b from-indigo-950/50 via-cardBg to-cardBg border border-indigo-500/20 p-10 md:p-16 rounded-3xl text-center shadow-2xl relative overflow-hidden">
-            <div class="absolute -top-32 -right-32 w-80 h-80 bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none"></div>
-            
-            <h3 class="text-3xl md:text-4xl font-extrabold mb-4 text-white">Pronto para colocar sua operação em fluxo?</h3>
-            <p class="text-slate-400 mb-10 max-w-xl mx-auto text-base leading-relaxed font-light">
-                Entre em contato direto com a nossa equipe para conversarmos sobre um diagnóstico de TI e Inteligência Artificial.
-            </p>
-            
-            <!-- Botões de Contato Direto -->
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                <a href="https://wa.me/5531990920985?text=Olá,%20vim%20pelo%20site%20da%20VirtuoFlow%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-emerald-600/30 flex items-center justify-center gap-2.5 border border-emerald-400/30">
-                    <span>Chamar no WhatsApp (31) 99092-0985</span>
-                </a>
-                <a href="mailto:comercial@virtuoflow.com.br" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-indigo-600/30 flex items-center justify-center gap-2.5 border border-indigo-400/30">
-                    <span>Enviar E-mail Comercial</span>
-                </a>
+    <!-- Contato / CTA final -->
+    <section id="contato" class="py-24 md:py-32 px-4 sm:px-6 scroll-mt-20">
+        <div class="max-w-5xl mx-auto relative rounded-[2rem] p-px bg-gradient-to-br from-flow-sky/60 via-flow-blue/30 to-flow-indigo/60 reveal">
+            <div class="relative rounded-[calc(2rem-1px)] bg-ink2 px-6 py-14 md:p-16 text-center overflow-hidden">
+                <div class="absolute inset-0 bg-grid opacity-60 pointer-events-none"></div>
+                <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] max-w-full h-80 bg-flow-blue/25 blur-[100px] rounded-full pointer-events-none"></div>
+
+                <div class="relative">
+                    <svg class="w-14 h-14 mx-auto mb-8"><use href="#vf-mark"/></svg>
+                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-5">Pronto para colocar sua operação <span class="text-flow">em fluxo?</span></h2>
+                    <p class="text-slate-400 mb-10 max-w-xl mx-auto text-lg leading-relaxed">
+                        Fale diretamente com a nossa equipe e agende um diagnóstico de TI e Inteligência Artificial.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+                        <a href="https://wa.me/5531990920985?text=Olá,%20vim%20pelo%20site%20da%20VirtuoFlow%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-emerald-600/25 ring-1 ring-inset ring-white/15">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3ZM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8Zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.8L0 24l6.3-1.7A11.8 11.8 0 0 0 23.8 12c0-3.2-1.2-6.1-3.4-8.4Z"/></svg>
+                            (31) 99092-0985
+                        </a>
+                        <a href="mailto:comercial@virtuoflow.com.br" class="inline-flex items-center justify-center gap-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold px-8 py-4 rounded-xl transition-all">
+                            <svg class="w-5 h-5 text-flow-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6"/></svg>
+                            comercial@virtuoflow.com.br
+                        </a>
+                    </div>
+
+                    <p class="font-mono text-xs text-slate-500">Atendimento direto via WhatsApp e e-mail · virtuoflow.com.br</p>
+                </div>
             </div>
-            
-            <p class="text-xs text-slate-500 font-mono">
-                E-mail: comercial@virtuoflow.com.br | Domínio: virtuoflow.com.br
-            </p>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="py-10 border-t border-slate-900/80 text-center text-xs text-slate-500 bg-darkBg">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2">
-                <span class="font-bold text-slate-300">VIRTUOFLOW</span>
-                <span>— Tecnologia, automação e inteligência.</span>
+    <footer class="border-t border-slate-900 bg-ink">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid gap-10 md:grid-cols-3 items-start">
+            <div>
+                <a href="#" class="flex items-center gap-3 mb-4" aria-label="VirtuoFlow — voltar ao topo">
+                    <svg class="w-11 h-11"><use href="#vf-mark"/></svg>
+                    <span class="leading-none">
+                        <span class="block text-2xl font-extrabold tracking-tight text-white">Virtuo<span class="font-normal text-flow-sky">Flow</span></span>
+                        <span class="block text-[9px] font-semibold tracking-[.28em] text-slate-400 mt-1.5">SOLUÇÕES EM IA &amp; TECNOLOGIA</span>
+                    </span>
+                </a>
+                <p class="text-sm text-slate-500 max-w-xs">Tecnologia, automação e inteligência para operações que precisam fluir.</p>
             </div>
-            <p>&copy; 2026 VirtuoFlow. Todos os direitos reservados. (virtuoflow.com.br)</p>
+            <nav class="grid grid-cols-2 gap-3 text-sm text-slate-400">
+                <a href="#solucoes" class="hover:text-white">Soluções</a>
+                <a href="#metodo" class="hover:text-white">Método</a>
+                <a href="#ecossistema" class="hover:text-white">Produtos</a>
+                <a href="#principios" class="hover:text-white">Princípios</a>
+                <a href="#contato" class="hover:text-white">Contato</a>
+                <a href="privacidade.html" class="hover:text-white">Privacidade</a>
+            </nav>
+            <div class="text-sm text-slate-400 md:text-right space-y-2">
+                <a href="mailto:comercial@virtuoflow.com.br" class="block hover:text-white">comercial@virtuoflow.com.br</a>
+                <a href="https://wa.me/5531990920985" target="_blank" rel="noopener" class="block hover:text-white">(31) 99092-0985</a>
+            </div>
+        </div>
+        <div class="border-t border-slate-900">
+            <p class="max-w-7xl mx-auto px-4 sm:px-6 py-6 text-xs text-slate-600">&copy; <span id="ano">2026</span> VirtuoFlow. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <!-- Botão flutuante de WhatsApp -->
+    <a href="https://wa.me/5531990920985?text=Olá,%20vim%20pelo%20site%20da%20VirtuoFlow." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" class="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/40 transition-transform hover:scale-110">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3ZM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8Zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.8L0 24l6.3-1.7A11.8 11.8 0 0 0 23.8 12c0-3.2-1.2-6.1-3.4-8.4Z"/></svg>
+    </a>
+
+    <script>
+        // Header com fundo ao rolar
+        const topo = document.getElementById('topo');
+        const setHeader = () => {
+            const scrolled = window.scrollY > 10;
+            topo.classList.toggle('bg-ink/80', scrolled);
+            topo.classList.toggle('backdrop-blur-xl', scrolled);
+            topo.classList.toggle('border-b', scrolled);
+            topo.classList.toggle('border-slate-800/70', scrolled);
+        };
+        setHeader();
+        window.addEventListener('scroll', setHeader, { passive: true });
+
+        // Menu mobile
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const toggleMenu = (open) => {
+            mobileMenu.classList.toggle('hidden', !open);
+            menuBtn.setAttribute('aria-expanded', open);
+            menuIcon.setAttribute('d', open ? 'M6 6l12 12M18 6 6 18' : 'M4 7h16M4 12h16M4 17h16');
+            if (open) topo.classList.add('bg-ink/80', 'backdrop-blur-xl');
+            else setHeader();
+        };
+        menuBtn.addEventListener('click', () => toggleMenu(mobileMenu.classList.contains('hidden')));
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+        // Revelação no scroll
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        document.getElementById('ano').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
